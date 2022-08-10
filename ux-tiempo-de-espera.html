@@ -6,10 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            padding: 10px;
+            font-family: 'Roboto', sans-serif;
+            color: aliceblue;
+            line-height: 25px;
+        }
+        .nav {
+            background: slategray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+        }
+        .nav > li {
+            display: inline-block;
+        }
+        .nav li ul {
+            /* display: block; */
+            opacity: 0;
+            position: absolute;
+            transition: opacity 400ms, visibility 400ms;
+            transition-delay: 300ms;
+            visibility: hidden;
+        }
+        .nav li:hover > ul {
+            background: slategray;
+            border-radius: 5px;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 400ms, visibility 400ms;
+            transition-delay: 300ms;
+        }
+        /* .nav li ul li {
+            position: relative;
+        } */
+        .nav li ul li {
+            right: -30px;
+        }
     </style>
 </head>
 <body>
-    
+    <ul class="nav">
+        <li>
+            <a href="/">Mujer</a>
+            <ul>
+                <li><a href="/">Camisetas</a></li>
+                <li><a href="/">Pantalones</a></li>
+                <li><a href="/">Short's</a>
+                    <ul>
+                        <li><a href="/">Cortos</a></li>
+                        <li><a href="/">Largos</a></li>
+                        <li><a href="/">Transparentes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/">Hombre</a>
+        </li>
+        <li>
+            <a href="/">Niños</a>
+        </li>
+    </ul>
 </body>
 </html>
