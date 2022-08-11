@@ -12,8 +12,8 @@
             transform-style: preserve-3d;
             position: relative;
         }
-        .card:hover {
-            transform: rotateY(180deg);
+        .card:hover .back{
+            opacity: 1;
         }
         .face {
             border-radius: 20px;
@@ -27,7 +27,26 @@
         }
         .face.back {
             background: papayawhip;
-            transform: rotateX(180deg);
+            /* transform: rotateX(180deg); */
+            transition-duration: 0.6s;
+            z-index: 2;
+            opacity: 0;
+        }
+        @media (prefers-reduced-motion: no-preference) {
+          .card {
+            transition: transform 0.5;
+            transform-style: preserve-3d;
+          }
+          .card:hover {
+            transform: rotateY(180deg);
+          }
+          .face {
+            backface-visibility: hidden;
+          }
+          .back {
+            transform: rotateY(180deg);
+            opacity: 1;
+          }
         }
     </style>
   </head>
